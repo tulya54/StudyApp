@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">StudyApp</string>
+
+
+    <string-array name="my_string_array">
+        <item>Test text 1</item>
+        <item>Test text 2</item>
+        <item>Test text 3</item>
+        <item>Test text 4</item>
+        <item>Test text 5</item>
+        <item>Test text 6</item>
+        <item>Test text 7</item>
+        <item>Test text 8</item>
+        <item>Test text 9</item>
+        <item>Test text 10</item>
+    </string-array>
 </resources>
