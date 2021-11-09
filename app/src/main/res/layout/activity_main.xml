@@ -22,6 +22,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+        <Button
+            style="@style/MyButton"
+            app:layout_constraintTop_toBottomOf="@+id/btnRecyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnData"
+            android:text="Open Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            style="@style/MyButton"
+            app:layout_constraintTop_toBottomOf="@+id/btnData"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnThread"
+            android:text="Open Thread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
