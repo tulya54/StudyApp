@@ -30,6 +30,7 @@
         <activity android:name=".DataActivity" />
         <activity android:name=".ThreadActivity" />
         <activity android:name=".activities.NextActivity" />
+        <activity android:name=".mvp.ViewMVP" />
 
     </application>
 

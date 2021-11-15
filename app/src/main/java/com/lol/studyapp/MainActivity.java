@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.lol.studyapp.mvp.ViewMVP;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((Button) findViewById(R.id.btnRecyclerView)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnData)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnThread)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnMVP)).setOnClickListener(this);
     }
 
 
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnThread:
                 startActivity(new Intent(this, ThreadActivity.class));
+                break;
+            case R.id.btnMVP:
+                startActivity(new Intent(this, ViewMVP.class));
                 break;
         }
     }
