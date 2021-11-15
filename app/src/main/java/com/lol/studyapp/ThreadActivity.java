@@ -7,10 +7,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class ThreadActivity extends AppCompatActivity {
 
@@ -37,13 +40,16 @@ public class ThreadActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //  Error
-            //    onThreadLoadImage1();
+//                onThreadLoadImage1();
                 //  Not error
-                    onThread();
+               //     onThread();
                 //  Async task
-         //           onThreadAsyncTask();
+//                    onThreadAsyncTask();
                 //  Rx (Reactive)
-                //  onThreadRx();
+//                  onThreadRx();
+
+              //  onThreadLooper();
+//                onThreadLooper();
 
             }
         });
@@ -88,11 +94,11 @@ public class ThreadActivity extends AppCompatActivity {
 //                        }
 //                    });
 
-//                    ivImage.post(new Runnable() {
-//                        public void run() {
-//                            ivImage.setImageBitmap(bmpImage);
-//                        }
-//                    });
+                    ivImage.post(new Runnable() {
+                        public void run() {
+                            ivImage.setImageBitmap(bmpImage);
+                        }
+                    });
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -148,13 +154,42 @@ public class ThreadActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(URL)
               //  .placeholder(R.drawable.placeholder) //optional
-             //   .resize(400, 400)         //optional
+                .resize(200, 200)         //optional
            //     .centerCrop()                        //optional
                 .into(ivImage);
     }
 
+    private void sendMSG(int msg) {
+        Toast.makeText(this, "Msg " + msg, Toast.LENGTH_SHORT).show();
+    }
 
+    private void onThreadLooper() {
+        mHandler = new Handler() {
+            public void handleMessage(android.os.Message msg) {
+                sendMSG(msg.what);
+                Log.d("Handle", "");
+                // process incoming messages here
+                // this will run in non-ui/background thread
+            }
+        };
 
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    try {
+                        //  Thread.sleep(0);
+                        TimeUnit.MILLISECONDS.sleep(1500);
+                        mHandler.sendEmptyMessage(i);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        t.start();
+    }
+    public Handler mHandler;
 
 
 

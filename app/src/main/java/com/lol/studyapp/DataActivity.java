@@ -49,6 +49,20 @@ public class DataActivity extends AppCompatActivity {
 
     }
 
+    private void test1 () {
+        int a = 5;
+        int b = 10;
+        boolean c = a == b;
+    }
+
+    private void test (){
+        int a = 10;
+        int b = 20;
+        int c = 30;
+        int d = a + b * c;
+        int e = ((d - a) + b) + c;
+    }
+
     private void convertDataToData() {
         int numb = 45;
         String text = "Bitch" + String.valueOf(numb);
