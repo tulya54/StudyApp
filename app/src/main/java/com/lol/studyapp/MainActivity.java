@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.lol.studyapp.activities.NextActivity;
+import com.lol.studyapp.fragments.FragmentsActivity;
 import com.lol.studyapp.mvp.ViewMVP;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +22,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((Button) findViewById(R.id.btnData)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnThread)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnMVP)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnActivity)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnFragments)).setOnClickListener(this);
+
     }
 
 
@@ -38,6 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnMVP:
                 startActivity(new Intent(this, ViewMVP.class));
+                break;
+            case R.id.btnActivity:
+                startActivity(new Intent(this, NextActivity.class));
+                break;
+            case R.id.btnFragments:
+                startActivity(new Intent(this, FragmentsActivity.class));
                 break;
         }
     }

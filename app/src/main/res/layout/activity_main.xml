@@ -51,5 +51,25 @@
             android:text="Open MVP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <Button
+            style="@style/MyButton"
+            app:layout_constraintTop_toBottomOf="@+id/btnMVP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnActivity"
+            android:text="Open Activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            style="@style/MyButton"
+            app:layout_constraintTop_toBottomOf="@+id/btnActivity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnFragments"
+            android:text="Open Fragments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

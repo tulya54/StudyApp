@@ -31,6 +31,11 @@
         <activity android:name=".ThreadActivity" />
         <activity android:name=".activities.NextActivity" />
         <activity android:name=".mvp.ViewMVP" />
+        <activity android:name=".fragments.FragmentsActivity" />
+        <activity android:name=".fragments.FragmentAddActivity" />
+        <activity android:name=".fragments.FragmentReplaceActivity" />
+        <activity android:name=".fragments.FragmentPagerActivity" />
+        <activity android:name=".fragments.MyFragmentActivity" />
 
     </application>
 
