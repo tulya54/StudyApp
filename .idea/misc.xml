@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/activity_fragments.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_mvp.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_mvvm.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_my_fragment.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_next.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_thread.xml" value="0.20606884057971014" />
