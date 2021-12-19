@@ -3,6 +3,7 @@ package com.lol.studyapp.api_clients;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import com.lol.studyapp.Constant;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,11 +31,15 @@ public class ApiClient {
         RxJava2CallAdapterFactory rxAdapter = RxJava2CallAdapterFactory.create();
 
         apiService = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl(Constant.BASE_URL)
                 .client(clientBuilder.build())
                 .addCallAdapterFactory(rxAdapter)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
                 .create(IApiService.class);
+    }
+
+    public static ApiClient getInstance() {
+        return new ApiClient();
     }
 }

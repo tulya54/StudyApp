@@ -19,6 +19,7 @@ public class ViewMVVM extends AppCompatActivity {
         CustomViewModelFactory factory = new CustomViewModelFactory("param");
         viewModel = new ViewModelProvider(this, factory).get(ViewModelMVVM.class);
         viewModel.getResponse().observe(this, this::consumeResponse);
+        viewModel.fetchApi();
 //MyViewModel myViewModel = new ViewModelProvider(this, viewModelFactory).get(MyViewModel.class);
 //        viewModel = new ViewModelProvider.ModelFactory(getApplication()).create(ViewModelMVVM.class);
     }

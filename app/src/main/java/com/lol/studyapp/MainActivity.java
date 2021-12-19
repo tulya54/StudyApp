@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.lol.studyapp.activities.NextActivity;
 import com.lol.studyapp.fragments.FragmentsActivity;
 import com.lol.studyapp.mvp.ViewMVP;
+import com.lol.studyapp.mvvm.ViewMVVM;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((Button) findViewById(R.id.btnMVP)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnActivity)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnFragments)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnMVVM)).setOnClickListener(this);
 
     }
 
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnFragments:
                 startActivity(new Intent(this, FragmentsActivity.class));
+                break;
+            case R.id.btnMVVM:
+                startActivity(new Intent(this, ViewMVVM.class));
                 break;
         }
     }

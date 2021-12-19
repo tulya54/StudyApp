@@ -36,6 +36,7 @@
         <activity android:name=".fragments.FragmentReplaceActivity" />
         <activity android:name=".fragments.FragmentPagerActivity" />
         <activity android:name=".fragments.MyFragmentActivity" />
+        <activity android:name=".mvvm.ViewMVVM" />
 
     </application>
 
