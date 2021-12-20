@@ -23,4 +23,9 @@ public class PidorList {
     @SerializedName("manufacturer")
     @Expose
     private Pidor manufacturer;
+
+
+    public Pidor getManufacturer() {
+        return manufacturer;
+    }
 }

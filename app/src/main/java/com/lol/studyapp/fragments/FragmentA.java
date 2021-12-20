@@ -22,7 +22,7 @@ public class FragmentA extends Fragment {
     private String param1;
     private String param2;
 
-    public FragmentA newInstance(String param1, String param2) {
+    public static FragmentA newInstance(String param1, String param2) {
         FragmentA fragmentA = new FragmentA();
         Bundle args = new Bundle();
         args.putString("param1", param1);

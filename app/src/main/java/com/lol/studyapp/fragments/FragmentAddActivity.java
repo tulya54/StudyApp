@@ -13,7 +13,7 @@ public class FragmentAddActivity extends AppCompatActivity implements View.OnCli
 
     private androidx.fragment.app.FragmentManager fragmentManager;
     private androidx.fragment.app.FragmentTransaction fragmentTransaction;
-    private final Fragment[] fragments = new Fragment[]{new FragmentA(), new FragmentB(), new FragmentC(), new FragmentD(), new FragmentE()};
+    private final Fragment[] fragments = new Fragment[]{FragmentA.newInstance("", ""), new FragmentB(), new FragmentC(), new FragmentD(), new FragmentE()};
     private final String[] TAGS = new String[]{"FragmentA", "FragmentB", "FragmentC", "FragmentD", "FragmentE"};
     private int position = 0;
 
@@ -35,8 +35,8 @@ public class FragmentAddActivity extends AppCompatActivity implements View.OnCli
                     //  если Add, то вызываем метод add, в который передаем
                     //  id контейнера (тот самый FrameLayout из main.xml) и объект фрагмента.
                     //  В итоге, в контейнер будет помещен Fragment1
-              //      fragmentTransaction.add(R.id.frame, fragments[position], TAGS[position]);
-                    fragmentTransaction.add(R.id.frame, fragments[position]);
+                    fragmentTransaction.add(R.id.frame, fragments[position], TAGS[position]);
+              //      fragmentTransaction.add(R.id.frame, fragments[position]);
                     fragmentTransaction.addToBackStack(TAGS[position]);
                     fragmentTransaction.commit();
                     position++;
@@ -53,57 +53,57 @@ public class FragmentAddActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
-        if (fragmentManager.getBackStackEntryCount() > 0) {
-            fragmentManager.popBackStack();
-        } else {
-            super.onBackPressed();
-        }
+//        if (fragmentManager.getBackStackEntryCount() > 0) {
+//            fragmentManager.popBackStack();
+//        } else {
+//            super.onBackPressed();
+//        }
 
 
 
         // если Remove, то вызываем метод remove, в который передаем объект фрагмента,
         // который хотим убрать. В итоге, фрагмент удалится с экрана.
-//        switch (position) {
-//            case 1:
-//                position--;
-//                FragmentA fragmentA = (FragmentA) fragmentManager.findFragmentByTag(TAGS[position]);
-//                if (fragmentA != null) {
-//                    fragmentTransaction.remove(fragments[position]);
-//                    fragmentTransaction.commit();
-//                }
-//                break;
-//            case 2:
-//                position--;
-//                FragmentB fragmentB = (FragmentB) fragmentManager.findFragmentByTag(TAGS[position]);
-//                if (fragmentB != null) {
-//                    fragmentTransaction.remove(fragments[position]);
-//                    fragmentTransaction.commit();
-//                }
-//                break;
-//            case 3:
-//                position--;
-//                FragmentC fragmentC = (FragmentC) fragmentManager.findFragmentByTag(TAGS[position]);
-//                if (fragmentC != null) {
-//                    fragmentTransaction.remove(fragments[position]);
-//                    fragmentTransaction.commit();
-//                }
-//                break;
-//            case 4:
-//                position--;
-//                FragmentD fragmentD = (FragmentD) fragmentManager.findFragmentByTag(TAGS[position]);
-//                if (fragmentD != null) {
-//                    fragmentTransaction.remove(fragments[position]);
-//                    fragmentTransaction.commit();
-//                }
-//                break;
-//            case 5:
-//                position--;
-//                FragmentE fragmentE = (FragmentE) fragmentManager.findFragmentByTag(TAGS[position]);
-//                if (fragmentE != null) {
-//                    fragmentTransaction.remove(fragments[position]);
-//                    fragmentTransaction.commit();
-//                }
-//                break;
-//        }
+        switch (position) {
+            case 1:
+                position--;
+                FragmentA fragmentA = (FragmentA) fragmentManager.findFragmentByTag(TAGS[position]);
+                if (fragmentA != null) {
+                    fragmentTransaction.remove(fragments[position]);
+                    fragmentTransaction.commit();
+                }
+                break;
+            case 2:
+                position--;
+                FragmentB fragmentB = (FragmentB) fragmentManager.findFragmentByTag(TAGS[position]);
+                if (fragmentB != null) {
+                    fragmentTransaction.remove(fragments[position]);
+                    fragmentTransaction.commit();
+                }
+                break;
+            case 3:
+                position--;
+                FragmentC fragmentC = (FragmentC) fragmentManager.findFragmentByTag(TAGS[position]);
+                if (fragmentC != null) {
+                    fragmentTransaction.remove(fragments[position]);
+                    fragmentTransaction.commit();
+                }
+                break;
+            case 4:
+                position--;
+                FragmentD fragmentD = (FragmentD) fragmentManager.findFragmentByTag(TAGS[position]);
+                if (fragmentD != null) {
+                    fragmentTransaction.remove(fragments[position]);
+                    fragmentTransaction.commit();
+                }
+                break;
+            case 5:
+                position--;
+                FragmentE fragmentE = (FragmentE) fragmentManager.findFragmentByTag(TAGS[position]);
+                if (fragmentE != null) {
+                    fragmentTransaction.remove(fragments[position]);
+                    fragmentTransaction.commit();
+                }
+                break;
+        }
     }
 }

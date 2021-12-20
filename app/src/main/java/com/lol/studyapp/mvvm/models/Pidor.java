@@ -16,4 +16,16 @@ public class Pidor {
     @SerializedName("phone")
     @Expose
     private String phone;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getHomePage() {
+        return homePage;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 }
