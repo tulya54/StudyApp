@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((Button) findViewById(R.id.btnActivity)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnFragments)).setOnClickListener(this);
         ((Button) findViewById(R.id.btnMVVM)).setOnClickListener(this);
-
-        ((Button) findViewById(R.id.btnActivity)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btnPermissions)).setOnClickListener(this);
     }
 
     @Override
@@ -73,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 finish();
               //  startActivity(new Intent(this, ViewMVP.class));
+                break;
+            case R.id.btnPermissions:
+                startActivity(new Intent(this, PermissionsActivity.class));
                 break;
         }
     }
