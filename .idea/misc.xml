@@ -18,6 +18,8 @@
         <entry key="app/src/main/res/layout/fragments.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/item_list_dara.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/item_list_data.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/item_list_data2.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/item_list_data3.xml" value="0.2375" />
         <entry key="app/src/main/res/layout/recycle_view_activity.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/recycler_view_activity.xml" value="0.21666666666666667" />
       </map>

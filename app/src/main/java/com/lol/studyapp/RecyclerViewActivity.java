@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.lol.studyapp.adapters.MyPOJO;
 import com.lol.studyapp.adapters.RecyclerViewAdapter;
 
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
             "Test text 1", "Test text 2", "Test text 3", "Test text 4",
             "Test text 5", "Test text 6", "Test text 7",
             "Test text 8", "Test text 9", "Test text 10"));
+
+    private final List<MyPOJO> myPOJOS = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,9 +54,16 @@ public class RecyclerViewActivity extends AppCompatActivity {
      //   arrayList.addAll(list);
 
 
-        if (arrayList.size() == 0)
-            return;
-        adapter.setData(arrayList);
+//        if (arrayList.size() == 0)
+//            return;
+//        adapter.setData(arrayList);
+        myPOJOS.add(new MyPOJO(1, "Test text 1"));
+        myPOJOS.add(new MyPOJO(2, "Test text 2"));
+        myPOJOS.add(new MyPOJO(3, "Test text 3"));
+        myPOJOS.add(new MyPOJO(1, "Test text 4"));
+        myPOJOS.add(new MyPOJO(2, "Test text 5"));
+        myPOJOS.add(new MyPOJO(3, "Test text 6"));
+        adapter.setData2(myPOJOS);
     }
 
     private void initLinearLayout() {
