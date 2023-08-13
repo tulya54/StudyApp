@@ -5,15 +5,51 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
 public class DataActivity extends AppCompatActivity {
+
+    byte b3; //если он находится внутри класса: он уже иницциализирован. Т.е если мы ему не
+    //присвоили значение, ему джава автоматом присваивает значение по умолчению(0 или фолс, зависит
+    //от типа данных
+    // Глобальные данные-это данные которые находятся внутрий класса.Мы их можем использывать внутри любого метода
+    //Локальные даннее-это данные которые находятся внутри метода. Мы их можем использывать только внутри этого метода
+    //т.к, их не объявили глобально
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
+        new CycleTest();//создали в памяти
+
+
+
+        Integer integer = null;
+
+        if (integer == null) {
+
+        }
+
+        List<Integer> list;
+        int value;
+
+        integer = new Integer(1);//Классу Integer присвоили значение(иниицализировали)
+        //Integer, String - это ссылычные данные,это классы которые горят черным цветом. Их можно проверять на null,
+        //потомц что это объект (класс)
+        int f = integer.intValue(); //все что горит синим цветом-это приметивные данные. Их нельзя проверять на null
+        byte b7;
+        if (integer != null) {
+
+        }
 
         /*****  Целые числа - byte, short, int, long  *****/
 
+        byte b2; //не инициализирован (пустой), потому что находится внутри метода, а не класса.
+        //Ему сами должны присвоить значение (инициализировать)
+        b2 = 0;//инициализация - передала/присвоила ему значение(литерал)
+
+        byte nn = b3;
         byte b = 126; // Диапазон от -128 до 127!
         short s = 1123;
         int i = 64536;
@@ -45,7 +81,49 @@ public class DataActivity extends AppCompatActivity {
 
         //Символы тоже относят к целочисленным типам из-за особенностей представления в памяти и традиций.
 
-        String text = "Hello";
+        String text = "Hello";// это массив char-ов
+        String text2 = new String("Hello");// это массив char-ов
+        String text3 = new String(new char[]{'H', 'e', 'l', 'l', 'o'});
+
+
+        Integer cat;
+
+        String guest = "dog";
+
+        if (guest == "cat") {
+            //  true
+        } else if (guest == "dog") {
+            //  true
+        } else if (guest == "bird") {
+            //  true
+        } else {
+            //  false
+        }
+
+
+
+        switch (guest) {
+            case "cat":
+                //  true
+                break;
+            case "dog":
+                //  true
+                break;
+            case "bird":
+                //  true
+                break;
+            default:
+                //  false
+                break;
+        }
+
+        boolean isWorkGood = false;
+
+        int ZP = 100000;
+
+        if (isWorkGood) {
+            ZP += 5000;
+        }
 
     }
 
